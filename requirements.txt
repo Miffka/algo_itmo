@@ -1,4 +1,4 @@
-git+git://github.com/Miffka/sorting-algorithms.git@a0fd9e7f0d606716791035c9cdac51e43c4b50ae
+git+git://github.com/Miffka/sorting-algorithms.git@442330912dc4c25869fd678cf82c682e4d5abc9d
 numpy==1.19.2
 matplotlib==3.3.2
 scipy==1.5.2

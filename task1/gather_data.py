@@ -7,7 +7,7 @@ import tqdm
 
 import numpy as np
 import pandas as pd
-from sort import bubblesort, mergesort, timsort
+from sort import bubblesort, quicksort, timsort
 
 from algo_utils.config import system_config
 
@@ -71,7 +71,7 @@ if __name__ == "__main__":
             "direct_poly",
             "horners_poly",
             "bubblesort.sort",
-            "mergesort.sort",
+            "quicksort.sort",
             "timsort.sort",
         ]:
             times = []
