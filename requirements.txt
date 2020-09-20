@@ -1,5 +1,6 @@
-git+git://github.com/Miffka/py-sorting.git@6cdb56d3086f31438b4a8b122b627aa7f8773f07
+git+git://github.com/Miffka/sorting-algorithms.git@a0fd9e7f0d606716791035c9cdac51e43c4b50ae
 numpy==1.19.2
 matplotlib==3.3.2
 scipy==1.5.2
 pandas==1.1.2
+tqdm==4.49.0
