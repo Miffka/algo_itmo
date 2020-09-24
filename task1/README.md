@@ -3,6 +3,7 @@
 
 Install requirements and main package to reproduce results
 ```bash
+cd ..
 pip install -r requirements.txt
 pip install -e .
 ```

@@ -45,6 +45,7 @@ def horners_poly(vector, x_val=1.5):
             poly_output += x_val * poly_output + vector[degree]
     return poly_output
 
+
 def _filter_times(times):
     times = np.asarray(times)
     times = times[(times != times.max()) & (times != times.min())]
