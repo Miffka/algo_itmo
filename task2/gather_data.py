@@ -178,7 +178,7 @@ if __name__ == "__main__":
         for func, interval in zip(("x_3", "module_x", "sin"), ([0, 1], [0, 1], [0.1, 1])):
             result = eval(optimizer)(eval(func), interval[0], interval[1])
             data.append(
-                {"optimizer": optimizer, "func": func, "min": result["min"], "iterations": result["iterations"]}
+                {"optimizer": optimizer, "func": func, "min": result["min"], "func_min": result["func_min"], "iterations": result["iterations"]}
             )
     data = pd.DataFrame(data)
     data.to_csv(args.output_1d, index=False)
