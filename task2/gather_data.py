@@ -2,11 +2,9 @@ import argparse
 from itertools import product
 import os.path as osp
 
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import scipy
-import seaborn as sns
 import tqdm
 
 from algo_utils.config import system_config
