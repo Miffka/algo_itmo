@@ -12,4 +12,4 @@ If you wish to generate new data, run:
 python gather_data.py
 ```
 
-See visualizations in [Task4_Visualization.ipynb](Task4_Visualization.ipynb).
+See visualizations in [Task4_Visualization.ipynb](Task4_Visualize.ipynb).
