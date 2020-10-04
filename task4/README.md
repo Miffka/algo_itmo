@@ -1,5 +1,5 @@
-# Task 3
-## Algorithms for unconstrained nonlinear optimization. First- and second-order methods
+# Task 4
+## Algorithms for unconstrained nonlinear optimization. Stochastic and metaheuristic algorithms
 
 Install requirements and main package to reproduce results
 ```bash
@@ -12,4 +12,4 @@ If you wish to generate new data, run:
 python gather_data.py
 ```
 
-See visualizations in [Task3_Visualization.ipynb](Task3_Visualization.ipynb).
+See visualizations in [Task4_Visualization.ipynb](Task4_Visualization.ipynb).
