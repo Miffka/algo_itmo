@@ -48,41 +48,48 @@ def connected_components(graph):
             seen.add(root)
             component = []
             queue = deque([root])
+            n_calls = 0
 
             while queue:
                 node = queue.popleft()
                 component.append(node)
+                n_calls += 1
                 for neighbor in graph[node]:
+                    n_calls += 1
                     if neighbor not in seen:
                         seen.add(neighbor)
                         queue.append(neighbor)
-            yield component
+            yield {"component": component, "n_calls": n_calls}
 
 
 def shortest_path(graph, start, goal):
     if start == goal:
-        return [start]
+        return [start], 1
     visited = {start}
     queue = deque([(start, [])])
+    n_calls = 0
 
     while queue:
         current, path = queue.popleft()
         visited.add(current)
+        n_calls += 1
         for neighbor in graph[current]:
+            n_calls += 1
             if neighbor == goal:
-                return path + [current, neighbor]
+                return path + [current, neighbor], n_calls
             if neighbor in visited:
                 continue
             queue.append((neighbor, path + [current]))
             visited.add(neighbor)
-    return None
+    return None, n_calls
 
 
-def shortest_path_matrix(graph):
+def shortest_paths_all(graph):
     paths = []
     for i, from_vert in enumerate(list(graph.keys())[:-1]):
         for to_vert in list(graph.keys())[i + 1 :]:
-            paths.append({"vertices": {from_vert, to_vert}, "path": shortest_path(graph, from_vert, to_vert)})
+            path, n_calls = shortest_path(graph, from_vert, to_vert)
+            paths.append({"vertices": {from_vert, to_vert}, "path": path, "path_len": len(path) if path is not None else 0, "n_calls": n_calls})
     return paths
 
 
@@ -99,7 +106,7 @@ if __name__ == "__main__":
     adj_list = adj_matrix_to_list(adj_matrix)
 
     conn_comp = list(connected_components(adj_list))
-    paths = shortest_path_matrix(adj_list)
+    paths = shortest_paths_all(adj_list)
 
     with open(args.output, "wb") as fout:
         pickle.dump(
